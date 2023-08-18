@@ -70,7 +70,7 @@ require('lazy').setup({
   --Git management
   {'tpope/vim-fugitive'},
   -- NOTE: First, some plugins that don't require any configuration
-  { 'Vigemus/iron.nvim' },
+  { 'TiagoSMarques/iron.nvim' },
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
