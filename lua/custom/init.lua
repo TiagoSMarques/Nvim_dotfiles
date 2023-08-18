@@ -1,4 +1,5 @@
-
+--remap to exit terminal insert mode
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 -- remap for Ex
 vim.keymap.set("n","<leader>pv", vim.cmd.Ex)
 -- remap for save 
