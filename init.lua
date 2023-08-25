@@ -37,6 +37,8 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now :)
 --]]
+
+vim.cmd("set noeol")
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
@@ -59,16 +61,25 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
+
+
+  { 'm4xshen/autoclose.nvim' },
+
+
+
+
   'ThePrimeagen/vim-be-good',
   cmd = { "VimBeGood", },
   --Git management
-  {'tpope/vim-fugitive'},
+  { 'tpope/vim-fugitive' },
   -- NOTE: First, some plugins that don't require any configuration
   { 'TiagoSMarques/iron.nvim' },
   -- Git related plugins
@@ -138,7 +149,7 @@ require('lazy').setup({
       end,
     },
   },
-  { "Shatur/neovim-ayu",     name = "ayu", priority = 1000 },
+  { "Shatur/neovim-ayu",    name = "ayu", priority = 1000 },
   -- {
   --   -- 'Shatur/neovim-ayu',
   --   -- Ayucolortheme,
@@ -183,7 +194,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',  opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -229,6 +240,9 @@ require('lazy').setup({
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   { import = 'custom.plugins' },
 }, {})
+
+require("autoclose").setup()
+
 
 -- require('ayu').setup({
 --   mirage = true,    -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
