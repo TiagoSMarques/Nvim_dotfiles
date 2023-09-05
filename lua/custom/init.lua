@@ -4,7 +4,7 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- remap for save
 vim.keymap.set("n", "<C-S>", vim.cmd.w)
-vim.keymap.set("n", "<C-V>", vim.cmd.put)
+-- vim.keymap.set("n", "<C-V>", vim.cmd.put)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -48,7 +48,10 @@ vim.keymap.set('n', '<space>rh', '<cmd>IronHide<cr>')
 
 
 vim.opt.relativenumber = true
-vim.opt.smartindent = true
+vim.opt.cindent = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true

@@ -43,7 +43,8 @@ vim.cmd("set noeol")
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = ','
+
 require("custom")
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -71,27 +72,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
 
-  { 'm4xshen/autoclose.nvim' },
-
-
-
-
-  'ThePrimeagen/vim-be-good',
-  cmd = { "VimBeGood", },
-  --Git management
-  { 'tpope/vim-fugitive' },
-  -- NOTE: First, some plugins that don't require any configuration
-  { 'TiagoSMarques/iron.nvim' },
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  --Navigate files
-  'ThePrimeagen/harpoon',
-  'nvim-lua/plenary.nvim',
-  --Undo tree
-  'mbbill/undotree',
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -207,8 +187,7 @@ require('lazy').setup({
       -- requirements installed.
       {
         'nvim-telescope/telescope-fzf-native.nvim',
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
+        -- NOTE: If you are having trouble with this installation, refer to the README for telescope-fzf-native for more instructions.
         build = 'make',
         cond = function()
           return vim.fn.executable 'make' == 1
@@ -241,7 +220,7 @@ require('lazy').setup({
   { import = 'custom.plugins' },
 }, {})
 
-require("autoclose").setup()
+-- require("autoclose").setup()
 
 
 -- require('ayu').setup({
